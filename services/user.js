@@ -4,32 +4,32 @@ const api = require('../config/api.js');
 /**
  * 调用微信登录
  */
-function loginByWeixin() {
-  let code = null;
-  return new Promise(function (resolve, reject) {
-    return util.login().then((res) => {
-      code = res.code;
-      return util.getUserInfo();
-    }).then((userInfo) => {
-      // 登录远程服务器
-      util.request(api.AuthLoginByWeixin, { code: code, userInfo: userInfo }, 'POST').then(res => {
-        if (res.errno === 0) {
-          // 存储用户信息
-          wx.setStorageSync('userInfo', res.data.userInfo);
-          wx.setStorageSync('token', res.data.token);
+// function loginByWeixin() {
+//   let code = null;
+//   return new Promise(function (resolve, reject) {
+//     return util.login().then((res) => {
+//       code = res.code;
+//       return util.getUserInfo();
+//     }).then((userInfo) => {
+//       // 登录远程服务器
+//       util.request(api.AuthLoginByWeixin, { code: code, userInfo: userInfo }, 'POST').then(res => {
+//         if (res.errno === 0) {
+//           // 存储用户信息
+//           wx.setStorageSync('userInfo', res.data.userInfo);
+//           wx.setStorageSync('token', res.data.token);
 
-          resolve(res);
-        } else {
-          reject(res)
-        }
-      }).catch((err) => {
-        reject(err);
-      });
-    }).catch((err) => {
-      reject(err);
-    })
-  });
-}
+//           resolve(res);
+//         } else {
+//           reject(res)
+//         }
+//       }).catch((err) => {
+//         reject(err);
+//       });
+//     }).catch((err) => {
+//       reject(err);
+//     })
+//   });
+// }
 
 /**
  * 判断用户是否登录
@@ -49,6 +49,6 @@ function checkLogin() {
 }
 
 module.exports = {
-  loginByWeixin,
+  // loginByWeixin,
   checkLogin,
 };
