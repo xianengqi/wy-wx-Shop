@@ -2,8 +2,9 @@
  * @param {*} 接口
  */
 
-var NewApiRootUrl = 'http://127.0.0.1:3008'
+const ApiRootUrl = 'http://127.0.0.1:3008'
 
 module.exports = {
-  AuthLoginByWeixin: NewApiRootUrl + '/users/wxLogin', // 微信登录接口
+  IndexUrl: ApiRootUrl + '/home',  // 首页数据接口
+  AuthLoginByWeixin: ApiRootUrl + '/users/wxLogin', // 微信登录接口
 }

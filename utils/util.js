@@ -36,7 +36,7 @@ function request(url, data = {}, method = "GET") {
 
         if (res.statusCode == 200) {
 
-          if (res.data.errno == 401) {
+          if (res.statusCode == 401) {
             //需要登录后才可以操作
             
             let code = null;
@@ -49,7 +49,7 @@ function request(url, data = {}, method = "GET") {
                 code: code,
                 userInfo: userInfo
               }, 'POST').then(res => {
-                if (res.errno === 0) {
+                if (res.statusCode === 1) {
                   //存储用户信息
                   wx.setStorageSync('userInfo', res.data.userInfo);
                   wx.setStorageSync('token', res.data.token);
