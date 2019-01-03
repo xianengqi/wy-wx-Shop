@@ -14,11 +14,10 @@
     "pages/logs/logs"
   ],
   "window":{
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#333",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
-    "backgroundTextStyle":"dark",
-    "backgroundTextStyle": "dark"
+    "navigationBarTextStyle": "dark",
+    "backgroundTextStyle":"dark"
   },
   "tabBar": {
     "backgroundColor": "#fafafa",
