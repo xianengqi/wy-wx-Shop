@@ -6,6 +6,11 @@ Page({
   data:{
     banner: [],
     channel: [],
+    brands: [],
+    newGoods: [],
+    hotGoods: [],
+    topics: [],
+    floorGoods: [],
   },
   
   getIndexData: function () {
@@ -17,6 +22,11 @@ Page({
         that.setData({
           banner: data.banner.rows,
           channel: data.channel.rows,
+          brands: data.brandList.rows,
+          newGoods: data.newGoods.rows,
+          hotGoods: data.hotGoods.rows,
+          topics: data.topicList.rows,
+          floorGoods: data.newCategoryList.rows,
         })
       }
     })
