@@ -10,6 +10,7 @@ Page({
     scrollLeft: 0,
     scrollTop: 0,
     scrollHeight: 0,
+    count: 227,
     currentOne: []
   },
 

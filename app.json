@@ -2,7 +2,9 @@
   "pages":[
     "pages/index/index",
     "pages/catalog/index",
+    "pages/newGoods/index",
     "pages/topic/index",
+    "pages/topicDetail/index",
     "pages/cart/index",
     "pages/ucenter/index/index",
     "pages/ucenter/order/index",

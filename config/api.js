@@ -11,4 +11,5 @@ module.exports = {
   CatalogCurrent: ApiRootUrl + '/category/currentAction', // 分类目录当前分类数据接口
   Catalogory: ApiRootUrl + '/category/categoryNav',
   GoodsCount: ApiRootUrl + '/goods/goodsList', // 统计商品总数
+  TopicList: ApiRootUrl + '/topic/listaction', // 专题列表
 }
