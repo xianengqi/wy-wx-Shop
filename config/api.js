@@ -12,4 +12,6 @@ module.exports = {
   Catalogory: ApiRootUrl + '/category/categoryNav',
   GoodsCount: ApiRootUrl + '/goods/goodsList', // 统计商品总数
   TopicList: ApiRootUrl + '/topic/listaction', // 专题列表
+  TopicDetail: ApiRootUrl + '/topic/detailaction', // 专题详情 + 相关专题
+  // CommentList: ApiRootUrl + ''  // 暂时不添加
 }
