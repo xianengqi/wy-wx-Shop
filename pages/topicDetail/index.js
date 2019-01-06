@@ -30,22 +30,20 @@ Page({
     util.request(api.TopicDetail, { id: that.data.id }).then(function (res) {
       console.log(res, '专题详情');
       // const data = res.results;
-      // if (res.statusCode === 1) {
-        that.setData({
-          topic: res.results.data.rows
-        });
-        const contentList = res.results.data.rows.content;
-        WxParse.wxParse('topicDetail', 'html', contentList, that, 0);
-      // }
-    });
-    util.request(api.TopicDetail, { id: that.data.id }).then(function (res) {
-      const data = res.results;
       if (res.statusCode === 1) {
         that.setData({
-          topicList: data.recommendList.rows,
+          topic: res.results.data.rows,
+          topicList: res.results.recommendList.rows,
         });
+        const contentList = res.results.data.rows;
+        const obj = {};
+        contentList.forEach((item, index) => {
+          obj[index] = item
+        })
+        console.log(obj[0].content, '这能转换成数组吗？');
+        WxParse.wxParse('topicDetail', 'html', obj[0].content, that);
       }
-    })
+    });
   },
   onReady:function(){
     // 生命周期函数--监听页面初次渲染完成
