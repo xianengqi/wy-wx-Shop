@@ -35,13 +35,13 @@ Page({
           topic: res.results.data.rows,
           topicList: res.results.recommendList.rows,
         });
-        const contentList = res.results.data.rows;
-        const obj = {};
-        contentList.forEach((item, index) => {
-          obj[index] = item
-        })
-        console.log(obj[0].content, '这能转换成数组吗？');
-        WxParse.wxParse('topicDetail', 'html', obj[0].content, that);
+        const contentList = res.results.recommendList.rows;
+        // const obj = {};
+        // contentList.forEach((item, index) => {
+        //   obj[index] = item
+        // })
+        console.log(contentList[0].content, '这能转换成对象吗？');
+        WxParse.wxParse('topicDetail', 'html', contentList[0].content, that);
       }
     });
   },

@@ -46,7 +46,13 @@ Page({
         that.setData({
           currentCategory: data.subList.rows,
           currentOne: data.currentOne.rows,
+        });
+        const contentList = res.results.currentOne.rows;
+        const obj = {};
+        contentList.forEach((item, index) => {
+          obj[index] = item
         })
+        console.log(obj, '这能转换成对象22222吗？');
       })
   },
   switchCate: function (event) {
